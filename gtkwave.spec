@@ -18,7 +18,6 @@ URL:		http://home.nc.rr.com/gtkwave/index.html
 BuildRequires:	gtk+2-devel
 BuildRequires:	libxml2-devel
 BuildRequires:	flex bzip2-devel
-BuildRoot:	%{_tmppath}/%{name}-%{version}
 
 %description
 GTKWave is a fully featured GTK+ based wave viewer for Unix and Win32 
