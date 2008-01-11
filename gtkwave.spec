@@ -53,17 +53,6 @@ install -D -m 644 %{name}-32.png %{buildroot}%{_iconsdir}/%{name}.png
 install -D -m 644 %{name}-48.png %{buildroot}%{_liconsdir}/%{name}.png
 
 # menu entry
-mkdir -p %{buildroot}%{_menudir}
-cat >%{buildroot}%{_menudir}/%{name} <<EOF
-?package(%{name}): \
-command="%{_bindir}/%{name} -n foo" \
-needs="X11" \
-icon="%{name}.png" \
-section="More Applications/Sciences/Other" \
-title="GTKWave" \
-longtitle="%{Summary}" \
-xdg="true"
-EOF
 
 mkdir -p %{buildroot}%{_datadir}/applications
 cat > %{buildroot}%{_datadir}/applications/%{name}.desktop << EOF
@@ -99,7 +88,6 @@ rm -rf %{buildroot}
 %{_bindir}/*
 %{_mandir}/man1/*
 %{_mandir}/man5/*
-%{_menudir}/%{name}
 %{_datadir}/applications/%{name}.desktop
 
 %{_miconsdir}/%{name}.png
