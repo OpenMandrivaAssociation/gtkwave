@@ -1,5 +1,5 @@
 %define	name	gtkwave
-%define	version 3.2.3
+%define	version 3.3.0
 %define release %mkrel 1
 %define Summary	GTKWave Electronic Waveform Viewer
 
