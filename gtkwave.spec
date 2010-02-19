@@ -21,6 +21,7 @@ BuildRequires:	flex
 BuildRequires:	gperf
 BuildRequires:	bzip2-devel
 BuildRequires:	zlib-devel
+BuildRequires:	xz
 BuildRoot:	%{_tmppath}/%{name}-%{version}
 
 %description
