@@ -22,6 +22,7 @@ BuildRequires:	gperf
 BuildRequires:	bzip2-devel
 BuildRequires:	zlib-devel
 BuildRequires:	xz
+BuildRequires:	lzma-devel
 BuildRoot:	%{_tmppath}/%{name}-%{version}
 
 %description
