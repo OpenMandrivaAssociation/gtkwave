@@ -1,5 +1,5 @@
 %define	name	gtkwave
-%define	version 3.3.21
+%define	version 3.3.22
 %define release %mkrel 1
 %define Summary	GTKWave Electronic Waveform Viewer
 
@@ -13,7 +13,6 @@ Source0:	http://gtkwave.sourceforge.net/%name-%version.tar.gz
 Source1:	%{name}-16.png
 Source2:	%{name}-32.png
 Source3:	%{name}-48.png
-Patch0:		gtkwave-3.3.10-fix-str-fmt.patch
 URL:		http://gtkwave.sourceforge.net/
 BuildRequires:	gtk+2-devel
 BuildRequires:	libxml2-devel
@@ -32,7 +31,6 @@ VCD/EVCD files and allows their viewing.
 
 %prep
 %setup -q
-%patch0 -p1
 
 %build
 %configure2_5x
