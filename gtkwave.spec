@@ -1,6 +1,6 @@
 %define	name	gtkwave
-%define	version 3.3.22
-%define release %mkrel 1
+%define	version 3.3.31
+%define release 1
 %define Summary	GTKWave Electronic Waveform Viewer
 
 Name:		%{name}
@@ -22,7 +22,7 @@ BuildRequires:	bzip2-devel
 BuildRequires:	zlib-devel
 BuildRequires:	xz
 BuildRequires:	lzma-devel
-BuildRoot:	%{_tmppath}/%{name}-%{version}
+BuildRequires:	tk-devel
 
 %description
 GTKWave is a fully featured GTK+ based wave viewer for Unix and Win32 
@@ -37,7 +37,6 @@ VCD/EVCD files and allows their viewing.
 %make
 
 %install
-rm -rf %{buildroot}
 %makeinstall_std
 
 # icons
@@ -58,28 +57,16 @@ StartupNotify=true
 Categories=GTK;Engineering;
 EOF
 
-%clean
-rm -rf %{buildroot}
-
-%if %mdkversion < 200900
-%post
-%{update_menus}
-%endif
-
-%if %mdkversion < 200900
-%postun
-%{clean_menus}
-%endif
-
 %files
-%defattr(-, root, root)
 %doc *.TXT doc examples
 %{_bindir}/*
 %{_mandir}/man1/*
 %{_mandir}/man5/*
+%{_datadir}/icons/gnome/*/*
 %{_datadir}/gtkwave
+%{_datadir}/mime/packages/*
 %{_datadir}/applications/%{name}.desktop
 %{_miconsdir}/%{name}.png
-%{_iconsdir}/%{name}.png
+%{_iconsdir}/*.png
 %{_liconsdir}/%{name}.png
 
