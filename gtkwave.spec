@@ -23,6 +23,7 @@ BuildRequires:	zlib-devel
 BuildRequires:	xz
 BuildRequires:	lzma-devel
 BuildRequires:	tk-devel
+BuildRequires:	tcl-devel
 
 %description
 GTKWave is a fully featured GTK+ based wave viewer for Unix and Win32 
