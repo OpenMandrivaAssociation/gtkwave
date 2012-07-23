@@ -1,15 +1,10 @@
-%define	name	gtkwave
-%define	version 3.3.31
-%define release 1
-%define Summary	GTKWave Electronic Waveform Viewer
-
-Name:		%{name}
-Version:	%{version}
-Release:	%{release}
-Summary:	%{Summary}
-License: 	GPLv2+
+Name:		gtkwave
+Version:	3.3.38
+Release:	1
+Summary:	Electronic Waveform Viewer
+License:	GPLv2+
 Group:		Sciences/Other
-Source0:	http://gtkwave.sourceforge.net/%name-%version.tar.gz
+Source0:	http://gtkwave.sourceforge.net/%{name}-%{version}.tar.gz
 Source1:	%{name}-16.png
 Source2:	%{name}-32.png
 Source3:	%{name}-48.png
@@ -20,7 +15,6 @@ BuildRequires:	flex
 BuildRequires:	gperf
 BuildRequires:	bzip2-devel
 BuildRequires:	zlib-devel
-BuildRequires:	xz
 BuildRequires:	lzma-devel
 BuildRequires:	tk-devel
 BuildRequires:	tcl-devel
@@ -49,7 +43,7 @@ mkdir -p %{buildroot}%{_datadir}/applications
 cat > %{buildroot}%{_datadir}/applications/%{name}.desktop << EOF
 [Desktop Entry]
 Name=GTKWave
-Comment=GTKWave Electronic Waveform Viewer
+Comment=Electronic Waveform Viewer
 Exec=%{_bindir}/%{name} -n foo
 Icon=%{name}
 Terminal=false
