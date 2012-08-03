@@ -1,6 +1,6 @@
 Name:		gtkwave
 Version:	3.3.38
-Release:	1
+Release:	2
 Summary:	Electronic Waveform Viewer
 License:	GPLv2+
 Group:		Sciences/Other
@@ -18,6 +18,7 @@ BuildRequires:	zlib-devel
 BuildRequires:	lzma-devel
 BuildRequires:	tk-devel
 BuildRequires:	tcl-devel
+BuildRequires:	judy-devel
 
 %description
 GTKWave is a fully featured GTK+ based wave viewer for Unix and Win32 
@@ -28,7 +29,9 @@ VCD/EVCD files and allows their viewing.
 %setup -q
 
 %build
-%configure2_5x
+%configure2_5x \
+	--enable-judy \
+	--enable-struct-pack
 %make
 
 %install
