@@ -1,5 +1,2 @@
 sources:
-  "gtkwave-16.png:"	4f6a89be234493ca15c9dd9399ba0836f01bb360
-  "gtkwave-32.png:"	19af79b79601752d32a49b101c91397392c3da3f
-  "gtkwave-3.3.38.tar.gz:"	fa9f52cf27ccc682cf8c598517f4ee04f7dac63a
-  "gtkwave-48.png:"	4e09c6ca7d1a83a0aa9d7d78b430202ca870ed32
+  "gtkwave-3.3.38.tar.gz": fa9f52cf27ccc682cf8c598517f4ee04f7dac63a
