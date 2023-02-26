@@ -4,7 +4,7 @@ Release:	1
 Summary:	Electronic Waveform Viewer
 License:	GPLv2+
 Group:		Sciences/Other
-Source0:	http://gtkwave.sourceforge.net/%{name}-%{version}.tar.gz
+Source0:	http://gtkwave.sourceforge.net/gtkwave-gtk3-%{version}.tar.gz
 
 URL:		http://gtkwave.sourceforge.net/
 BuildRequires:	pkgconfig(gio-unix-2.0) >= 2.0
