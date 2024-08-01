@@ -1,24 +1,31 @@
+%define _disable_ld_no_undefined 1
+
 Name:		gtkwave
-Version:	3.3.38
-Release:	3
+Version:	3.3.120
+Release:	1
 Summary:	Electronic Waveform Viewer
 License:	GPLv2+
 Group:		Sciences/Other
-Source0:	http://gtkwave.sourceforge.net/%{name}-%{version}.tar.gz
-Source1:	%{name}-16.png
-Source2:	%{name}-32.png
-Source3:	%{name}-48.png
+Source0:	http://gtkwave.sourceforge.net/gtkwave-gtk3-%{version}.tar.gz
+
 URL:		http://gtkwave.sourceforge.net/
-BuildRequires:	gtk+2-devel
-BuildRequires:	libxml2-devel
+BuildRequires:	pkgconfig(gio-unix-2.0) >= 2.0
+BuildRequires:	pkgconfig(gtk+-3.0) >= 3.0.0
+BuildRequires:	pkgconfig(gtk+-unix-print-3.0)
+BuildRequires:	pkgconfig(libtirpc)
+BuildRequires:	pkgconfig(libxml-2.0)
 BuildRequires:	flex
 BuildRequires:	gperf
-BuildRequires:	bzip2-devel
-BuildRequires:	zlib-devel
+BuildRequires:	pkgconfig(bzip2)
+BuildRequires:	pkgconfig(zlib)
 BuildRequires:	lzma-devel
-BuildRequires:	tk-devel
-BuildRequires:	tcl-devel
+BuildRequires:	pkgconfig(tk)
+BuildRequires:	pkgconfig(tcl)
 BuildRequires:	judy-devel
+
+Recommends:	gedit
+Requires:	hicolor-icon-theme
+Requires:	shared-mime-info
 
 %description
 GTKWave is a fully featured GTK+ based wave viewer for Unix and Win32 
@@ -26,34 +33,26 @@ which reads LXT, LXT2, VZT, and GHW files as well as standard Verilog
 VCD/EVCD files and allows their viewing. 
 
 %prep
-%setup -q
-
+%setup -q -n gtkwave-gtk3-%{version}
+ 
 %build
-%configure2_5x \
+%configure \
+	--disable-dependency-tracking \
+	--disable-mime-update \
+	--enable-gtk3 \
 	--enable-judy \
-	--enable-struct-pack
-%make
-
+	--with-gsettings \
+ 	--disable-tcl \
+	--with-tirpc
+%make_build
+ 
 %install
-%makeinstall_std
+make install \
+	DESTDIR=%{buildroot} \
+	pkgdatadir=%{_pkgdocdir} \
+	INSTALL="install -p"
 
-# icons
-install -D -m 644 %{SOURCE1} %{buildroot}%{_miconsdir}/%{name}.png
-install -D -m 644 %{SOURCE2} %{buildroot}%{_iconsdir}/%{name}.png
-install -D -m 644 %{SOURCE3} %{buildroot}%{_liconsdir}/%{name}.png
 
-mkdir -p %{buildroot}%{_datadir}/applications
-cat > %{buildroot}%{_datadir}/applications/%{name}.desktop << EOF
-[Desktop Entry]
-Name=GTKWave
-Comment=Electronic Waveform Viewer
-Exec=%{_bindir}/%{name} -n foo
-Icon=%{name}
-Terminal=false
-Type=Application
-StartupNotify=true
-Categories=GTK;Engineering;
-EOF
 
 %files
 %doc *.TXT doc examples
@@ -61,13 +60,13 @@ EOF
 %{_mandir}/man1/*
 %{_mandir}/man5/*
 %{_datadir}/icons/gnome/*/*
-%{_datadir}/gtkwave
+%{_datadir}/glib-2.0/schemas/com.geda.gtkwave.gschema.xml
 %{_datadir}/mime/packages/*
 %{_datadir}/applications/%{name}.desktop
-%{_miconsdir}/%{name}.png
-%{_iconsdir}/*.png
-%{_liconsdir}/%{name}.png
-
+%{_iconsdir}/gtkwave_256x256x32.png
+%{_iconsdir}/gtkwave_files_256x256x32.png
+%{_iconsdir}/gtkwave_savefiles_256x256x32.png
+%{_iconsdir}/hicolor/scalable/apps/gtkwave.svg
 
 
 %changelog
@@ -92,7 +91,7 @@ EOF
 + Revision: 661030
 - update to new version 3.3.21
 
-* Wed Mar 16 2011 Stéphane Téletchéa <steletch@mandriva.org> 3.3.20-1
+* Wed Mar 16 2011 StÃ©phane TÃ©letchÃ©a <steletch@mandriva.org> 3.3.20-1
 + Revision: 645234
 - update to new version 3.3.20
 
@@ -136,7 +135,7 @@ EOF
     - Fix BuildRequires
     - update to new version 3.3.3
 
-* Mon Jan 11 2010 Jérôme Brenier <incubusss@mandriva.org> 3.3.2-2mdv2010.1
+* Mon Jan 11 2010 JÃ©rÃ´me Brenier <incubusss@mandriva.org> 3.3.2-2mdv2010.1
 + Revision: 489973
 - bump release
 - new version 3.3.2
@@ -199,10 +198,10 @@ EOF
 - fixed buildrequires
 - devel subpackage
 
-* Tue Jul 15 2003 Per �yvind Karlsen <peroyvind@sintrax.net> 2.0.0-0.pre3.3mdk
+* Tue Jul 15 2003 Per Øyvind Karlsen <peroyvind@sintrax.net> 2.0.0-0.pre3.3mdk
 - rebuild
 
-* Tue Jun 24 2003 Per �yvind Karlsen <peroyvind@sintrax.net> 2.0.0-0.pre3.2mdk
+* Tue Jun 24 2003 Per Øyvind Karlsen <peroyvind@sintrax.net> 2.0.0-0.pre3.2mdk
 - fix group
 - rm -rf %%{buildroot} in %%install, not %%prep
 - change summary macro to avoid conflicts with -debug package
