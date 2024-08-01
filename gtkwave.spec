@@ -60,12 +60,12 @@ make install \
 %{_mandir}/man1/*
 %{_mandir}/man5/*
 %{_datadir}/icons/gnome/*/*
-%{_datadir}/gtkwave
+#{_datadir}/gtkwave
 %{_datadir}/mime/packages/*
 %{_datadir}/applications/%{name}.desktop
-%{_miconsdir}/%{name}.png
-%{_iconsdir}/*.png
-%{_liconsdir}/%{name}.png
+#{_miconsdir}/%{name}.png
+#{_iconsdir}/*.png
+#{_liconsdir}/%{name}.png
 
 
 
