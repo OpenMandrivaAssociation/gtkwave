@@ -1,3 +1,5 @@
+%define _disable_ld_no_undefined 1
+
 Name:		gtkwave
 Version:	3.3.120
 Release:	1
