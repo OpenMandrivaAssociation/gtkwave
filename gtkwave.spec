@@ -60,13 +60,13 @@ make install \
 %{_mandir}/man1/*
 %{_mandir}/man5/*
 %{_datadir}/icons/gnome/*/*
-#{_datadir}/gtkwave
+%{_datadir}/glib-2.0/schemas/com.geda.gtkwave.gschema.xml
 %{_datadir}/mime/packages/*
 %{_datadir}/applications/%{name}.desktop
-#{_miconsdir}/%{name}.png
-#{_iconsdir}/*.png
-#{_liconsdir}/%{name}.png
-
+%{_iconsdir}/gtkwave_256x256x32.png
+%{_iconsdir}/gtkwave_files_256x256x32.png
+%{_iconsdir}/gtkwave_savefiles_256x256x32.png
+%{_iconsdir}/hicolor/scalable/apps/gtkwave.svg
 
 
 %changelog
