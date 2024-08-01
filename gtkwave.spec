@@ -1,5 +1,5 @@
 Name:		gtkwave
-Version:	3.3.114
+Version:	3.3.120
 Release:	1
 Summary:	Electronic Waveform Viewer
 License:	GPLv2+
