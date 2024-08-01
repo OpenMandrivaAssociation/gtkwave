@@ -42,6 +42,7 @@ VCD/EVCD files and allows their viewing.
 	--enable-gtk3 \
 	--enable-judy \
 	--with-gsettings \
+ 	--disable-tcl \
 	--with-tirpc
 %make_build
  
