@@ -8,7 +8,7 @@ License:	GPLv2+
 Group:		Sciences/Other
 Source0:	http://gtkwave.sourceforge.net/gtkwave-gtk3-%{version}.tar.gz
 
-URL:		http://gtkwave.sourceforge.net/
+URL:		https://gtkwave.sourceforge.net/
 BuildRequires:	pkgconfig(gio-unix-2.0) >= 2.0
 BuildRequires:	pkgconfig(gtk+-3.0) >= 3.0.0
 BuildRequires:	pkgconfig(gtk+-unix-print-3.0)
