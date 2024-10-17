@@ -1,12 +1,12 @@
 %define _disable_ld_no_undefined 1
 
 Name:		gtkwave
-Version:	3.3.120
+Version:	3.3.121
 Release:	1
 Summary:	Electronic Waveform Viewer
 License:	GPLv2+
 Group:		Sciences/Other
-Source0:	http://gtkwave.sourceforge.net/gtkwave-gtk3-%{version}.tar.gz
+Source0:	https://gtkwave.sourceforge.net/gtkwave-gtk3-%{version}.tar.gz
 
 URL:		https://gtkwave.sourceforge.net/
 BuildRequires:	pkgconfig(gio-unix-2.0) >= 2.0
