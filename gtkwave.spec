@@ -1,7 +1,7 @@
 %define _disable_ld_no_undefined 1
 
 Name:		gtkwave
-Version:	3.3.124
+Version:	3.3.125
 Release:	1
 Summary:	Electronic Waveform Viewer
 License:	GPLv2+
