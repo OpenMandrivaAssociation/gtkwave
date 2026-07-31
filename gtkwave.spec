@@ -1,7 +1,7 @@
 %define _disable_ld_no_undefined 1
 
 Name:		gtkwave
-Version:	3.3.127
+Version:	3.3.128
 Release:	1
 Summary:	Electronic Waveform Viewer
 License:	GPLv2+
@@ -38,7 +38,7 @@ which reads LXT, LXT2, VZT, and GHW files as well as standard Verilog
 VCD/EVCD files and allows their viewing. 
 
 %prep
-%setup -q -n gtkwave-gtk3-%{version}
+%setup -q -n gtkwave-gtk3-3.3.128
  
 %build
 %configure \
