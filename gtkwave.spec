@@ -38,9 +38,10 @@ which reads LXT, LXT2, VZT, and GHW files as well as standard Verilog
 VCD/EVCD files and allows their viewing. 
 
 %prep
-%setup -q -n gtkwave-gtk3-3.3.128
+%setup -q -n gtkwave-gtk3-%{version}
  
 %build
+export CFLAGS="%{optflags} -std=gnu17"
 %configure \
 	--disable-dependency-tracking \
 	--disable-mime-update \
